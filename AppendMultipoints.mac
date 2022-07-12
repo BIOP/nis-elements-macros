@@ -1,0 +1,25 @@
+// Just a simple macro that shows a very basic way to append multipoints
+// Be aware : the coordinates are in micrometers, so a factor 1000 compared to what is displayed is expected
+
+char str[256];
+int i;
+
+for(i=0; i<3; i=i+1){
+   WaitText(1,"I count");
+   sprintf(str, "p%d", i);
+   ND_AppendMultipointPoint(50,i*1000,0.00000,str);
+}
+
+
+// The alternative to a loop is to use ND_AppendMultipointPoint, but I never managed to make it work
+//char posX[2][256];  // string buffer
+//char posY[2][256];  // string buffer
+//char posZ[2][256];  // string buffer
+//sprintf(posX[0],"%f","100");
+//sprintf(posY[0],"%f","1000");
+//sprintf(posZ[0],"%f","1.1");
+//WaitText(2,posX[0]);
+//ND_SetMultiPoints(1,posX,posY,posZ,"Pt0"); 
+//ND_AppendMultipointPoint(50,0.20000,0.00000,"p1");
+
+  
